@@ -1,8 +1,9 @@
-export function TodoItem() {
+export function TodoItem(props) {
+  const { name, completed } = props;
     return(
       <li>
-        <span>✅</span>
-        <p>Name of todo</p>
+        <span>{ completed ? '✔️' : '' }</span>
+        <p>{name}</p>
         <span>❌</span>
       </li>
     );
