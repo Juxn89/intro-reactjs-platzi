@@ -1,10 +1,16 @@
-import { TodoCounter, TodoSearch, TodoList, TodoItem, CreateTodoButton } from './components/';
+import { 
+  CreateTodoButton ,
+  TodoItem,
+  TodoList,
+  TodoSearch,
+  TodoCounter
+} from './components/';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <TodoCounter />
+    <>
+      <TodoCounter total={ 10 } totalCompleted= { 1 } />
       <TodoSearch />
 
       <TodoList>
@@ -12,7 +18,7 @@ function App() {
       </TodoList>
 
       <CreateTodoButton />
-    </div>
+    </>
   );
 }
 
