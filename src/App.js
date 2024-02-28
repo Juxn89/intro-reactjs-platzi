@@ -10,11 +10,15 @@ import { defaultTodos } from './data/todos'
 import './App.css';
 
 function App() {
-	const [searchValue, setSearchValue] = useState('');
 	const [todos, setTodos] = useState(defaultTodos);
+	const [searchValue, setSearchValue] = useState('');
 
 	const total = todos.length
 	const totalCompleted = todos.filter(todos => !!todos.completed).length
+
+	const searchedTodos = todos.filter(todo => 
+		todo.name.toLocaleLowerCase().includes(searchValue.toLocaleLowerCase())
+	)
 
   return (
     <>
@@ -23,7 +27,7 @@ function App() {
 
       <TodoList>
         {
-          todos.map(todo => (
+          searchedTodos.map(todo => (
             <TodoItem key={todo.id} name={ todo.name } completed={ todo.completed }/>
           ))
         }
