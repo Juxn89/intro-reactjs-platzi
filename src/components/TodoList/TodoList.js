@@ -1,6 +1,8 @@
+import styles from './TodoList.module.css'
+
 export function TodoList(props) {
     return(
-      <ul>
+      <ul className={ `${styles.TodoList}` }>
         { props.children }
       </ul>
     )

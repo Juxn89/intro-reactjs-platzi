@@ -5,14 +5,8 @@ import {
   TodoSearch,
   TodoCounter
 } from './components/';
+import { defaultTodos } from './data/todos'
 import './App.css';
-
-const defaultTodos = [
-  { name: 'Task #1', completed: false },
-  { name: 'Task #2', completed: false },
-  { name: 'Task #3', completed: true },
-  { name: 'Task #4', completed: false }
-]
 
 function App() {
   return (
@@ -22,8 +16,8 @@ function App() {
 
       <TodoList>
         {
-          defaultTodos.map((todo, index) => (
-            <TodoItem key={index} name={ todo.name } completed={ todo.completed }/>
+          defaultTodos.map(todo => (
+            <TodoItem key={todo.id} name={ todo.name } completed={ todo.completed }/>
           ))
         }
       </TodoList>
