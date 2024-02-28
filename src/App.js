@@ -20,6 +20,20 @@ function App() {
 		todo.name.toLocaleLowerCase().includes(searchValue.toLocaleLowerCase())
 	)
 
+	const completeToDo = (id) => {
+		const updatedListToDos = [...todos];
+		const todoToUpdateIndex = updatedListToDos.findIndex(todo => todo.id === id)
+		updatedListToDos[todoToUpdateIndex].completed = true;
+
+		setTodos(updatedListToDos)
+	}
+
+	const deleteToDo = (id) => {
+		const updatedListToDos = todos.filter(todo => todo.id !== id);
+
+		setTodos(updatedListToDos)
+	}
+
   return (
     <>
       <TodoCounter total={ total } totalCompleted= { totalCompleted } />
@@ -28,7 +42,7 @@ function App() {
       <TodoList>
         {
           searchedTodos.map(todo => (
-            <TodoItem key={todo.id} name={ todo.name } completed={ todo.completed }/>
+            <TodoItem key={todo.id} id={ todo.id } name={ todo.name } completed={ todo.completed } handleComplete={ completeToDo } handleDetele={ deleteToDo }/>
           ))
         }
       </TodoList>
