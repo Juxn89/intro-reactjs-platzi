@@ -1,3 +1,5 @@
+import { CompleteIcon } from '../ui/CompleteIcon/CompleteIcon';
+import { DeleteIcon } from '../ui/DeteleIcon/DeleteIcon';
 import styles from './TodoItem.module.css'
 
 export function TodoItem(props) {
@@ -5,11 +7,15 @@ export function TodoItem(props) {
 
 	return(
 		<li className={ styles.TodoItem }>
-			<span className={ `${styles.Icon} ${styles['Icon-check']} ${completed && styles['Icon-check--active']} }`} onClick={ () => handleComplete(id) }>
+			<CompleteIcon />
+			{/* <span className={ `${styles.Icon} ${styles['Icon-check']} ${completed && styles['Icon-check--active']} }`} onClick={ () => handleComplete(id) }>
 				{ completed ? '' : '✔️' }
-			</span>
+			</span> */}
 			<p className={ `${styles['TodoItem-p']} ${completed && styles['TodoItem-p--complete']}` }>{name}</p>
-			<span className={ `${styles.Icon} ${styles['Icon-delete']}` } onClick={ () => handleDetele(id) }>❌</span>
+			{/* <span className={ `${styles.Icon} ${styles['Icon-delete']}` } onClick={ () => handleDetele(id) }>
+				❌
+			</span> */}
+			<DeleteIcon />
 		</li>
 	);
 }
