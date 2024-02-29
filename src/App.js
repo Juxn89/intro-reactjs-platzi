@@ -42,7 +42,13 @@ function App() {
       <TodoList>
         {
           searchedTodos.map(todo => (
-            <TodoItem key={todo.id} id={ todo.id } name={ todo.name } completed={ todo.completed } handleComplete={ completeToDo } handleDetele={ deleteToDo }/>
+            <TodoItem 
+							key={todo.id} 
+							name={ todo.name } 
+							completed={ todo.completed } 
+							handleComplete={ () => {completeToDo(todo.id) } } 
+							handleDetele={ () => deleteToDo(todo.id) }
+						/>
           ))
         }
       </TodoList>

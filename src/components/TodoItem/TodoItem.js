@@ -3,19 +3,15 @@ import { DeleteIcon } from '../ui/DeteleIcon/DeleteIcon';
 import styles from './TodoItem.module.css'
 
 export function TodoItem(props) {
-  const { id, name, completed, handleComplete, handleDetele } = props;
+  const { name, completed, handleComplete, handleDetele } = props;
 
 	return(
 		<li className={ styles.TodoItem }>
-			<CompleteIcon />
-			{/* <span className={ `${styles.Icon} ${styles['Icon-check']} ${completed && styles['Icon-check--active']} }`} onClick={ () => handleComplete(id) }>
-				{ completed ? '' : '✔️' }
-			</span> */}
+			<CompleteIcon completed={ completed } onComplete={ handleComplete } />
+
 			<p className={ `${styles['TodoItem-p']} ${completed && styles['TodoItem-p--complete']}` }>{name}</p>
-			{/* <span className={ `${styles.Icon} ${styles['Icon-delete']}` } onClick={ () => handleDetele(id) }>
-				❌
-			</span> */}
-			<DeleteIcon />
+
+			<DeleteIcon onDelete={ handleDetele } />
 		</li>
 	);
 }

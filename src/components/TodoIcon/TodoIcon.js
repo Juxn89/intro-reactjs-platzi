@@ -1,19 +1,22 @@
 import { ReactComponent as CheckSvg } from '../../assets/check.svg'
 import { ReactComponent as DeleteSvg } from '../../assets/delete.svg'
-import styles from '../TodoItem/TodoItem.module.css'
+import './TodoIcon.css'
 
 const iconsAllowed = {
-	'check': <CheckSvg />,
-	'delete': <DeleteSvg />
+	'check': (color) => <CheckSvg className='Icon-svg' fill={color}/>,
+	'delete': (color) => <DeleteSvg className='Icon-svg' fill={color} />
 }
 
 export const TodoIcon = (props) => {
-	const { type } = props;
-	const baseStyle = `${styles.Icon} ${styles['Icon-svg']}`
+	const { type, color, onClick } = props;
+
 	return(
-		<span className={ `${baseStyle} ${styles[`Icon-${type}`]}` }>
+		<span 
+			className={ `Icon-container Icon-container-${type}` } 
+			onClick={ onClick }
+		>
 			{
-				iconsAllowed[type]
+				iconsAllowed[type](color)
 			}			
 		</span>
 	)
