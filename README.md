@@ -12,3 +12,4 @@ intro-reactjs-platzi
 
 ## Guía de estilos
 - [Guía de BEM para CSS | Cohete Falcon 9 de SpaceX](https://platzi.com/blog/bem/)
+- [¿Cuándo crear un Componente? Estructura, Organización y Tipos de Componentes en React](https://platzi.com/blog/estructura-organizacion-y-tipos-de-componentes-en-react/)
