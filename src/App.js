@@ -6,48 +6,39 @@ import {
   TodoSearch,
   TodoCounter
 } from './components/';
-import { defaultTodos } from './data/todos';
 import './App.css';
+import { useLocalStorage } from './hooks/useLocalStorage';
+import { defaultTodos } from './data/todos';
 
 function App() {
-	const locaStorageToDo = localStorage.getItem('ToDo_v1')
-	let parsedTodos = [];
-
-	if(locaStorageToDo === null) {
-		localStorage.setItem('ToDo_v1', JSON.stringify(defaultTodos))
-		parsedTodos = defaultTodos
-	}
-	else
-		parsedTodos = JSON.parse(locaStorageToDo)
-
-	const [todos, setTodos] = useState(parsedTodos);
+	const [todos, saveItem] = useLocalStorage('ToDo_v1', defaultTodos);
 	const [searchValue, setSearchValue] = useState('');
 
 	const total = todos.length
 	const totalCompleted = todos.filter(todos => !!todos.completed).length
-
-	const saveToDo = (newTodos) => {
-		const jsonTodos = JSON.stringify(newTodos)
-		localStorage.setItem('ToDo_v1', jsonTodos)
-		setTodos(newTodos)
-	}
 
 	const searchedTodos = todos.filter(todo => 
 		todo.name.toLocaleLowerCase().includes(searchValue.toLocaleLowerCase())
 	)
 
 	const completeToDo = (id) => {
-		const updatedListToDos = [...todos];
-		const todoToUpdateIndex = updatedListToDos.findIndex(todo => todo.id === id)
-		updatedListToDos[todoToUpdateIndex].completed = true;
+		// const updatedListToDos = [...todos];
+		// const todoToUpdateIndex = updatedListToDos.findIndex(todo => todo.id === id)
+		// updatedListToDos[todoToUpdateIndex].completed = !updatedListToDos[todoToUpdateIndex].completed;
 
-		saveToDo(updatedListToDos)
+		const updatedListToDos = todos.map(todo => {
+			if(todo.id === id)
+				return { ...todo, completed: !todo.completed }
+			return todo;
+		})
+
+		saveItem(updatedListToDos)
 	}
 
 	const deleteToDo = (id) => {
 		const updatedListToDos = todos.filter(todo => todo.id !== id);
 
-		saveToDo(updatedListToDos)
+		saveItem(updatedListToDos)
 	}
 
   return (
