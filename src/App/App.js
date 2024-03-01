@@ -1,14 +1,8 @@
 import { useState } from 'react';
-import { 
-  CreateTodoButton ,
-  TodoItem,
-  TodoList,
-  TodoSearch,
-  TodoCounter
-} from './components/';
+import { AppUI } from './AppUI';
+import { useLocalStorage } from '../hooks/useLocalStorage';
+import { defaultTodos } from '../data/todos';
 import './App.css';
-import { useLocalStorage } from './hooks/useLocalStorage';
-import { defaultTodos } from './data/todos';
 
 function App() {
 	const [todos, saveItem] = useLocalStorage('ToDo_v1', defaultTodos);
@@ -41,28 +35,17 @@ function App() {
 		saveItem(updatedListToDos)
 	}
 
-  return (
-    <>
-      <TodoCounter total={ total } totalCompleted= { totalCompleted } />
-      <TodoSearch searchValue={ searchValue } setSearchValue={ setSearchValue } />
-
-      <TodoList>
-        {
-          searchedTodos.map(todo => (
-            <TodoItem 
-							key={todo.id} 
-							name={ todo.name } 
-							completed={ todo.completed } 
-							handleComplete={ () => {completeToDo(todo.id) } } 
-							handleDetele={ () => deleteToDo(todo.id) }
-						/>
-          ))
-        }
-      </TodoList>
-
-      <CreateTodoButton />
-    </>
-  );
+	return(
+		<AppUI
+			total={ total }
+			totalCompleted={ totalCompleted }
+			searchValue={ searchValue }
+			setSearchValue={ setSearchValue }
+			searchedTodos={ searchedTodos }
+			completeToDo={ completeToDo }
+			deleteToDo={ deleteToDo }
+		/>
+	)
 }
 
 export default App;
