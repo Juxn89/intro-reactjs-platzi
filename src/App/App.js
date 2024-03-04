@@ -1,11 +1,10 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { AppUI } from './AppUI';
 import { useLocalStorage } from '../hooks/useLocalStorage';
-import { defaultTodos } from '../data/todos';
 import './App.css';
 
 function App() {
-	const [todos, saveItem] = useLocalStorage('ToDo_v1', defaultTodos);
+	const { item: todos, saveItem, loading, error } = useLocalStorage('ToDo_v1', []);
 	const [searchValue, setSearchValue] = useState('');
 
 	const total = todos.length
@@ -44,6 +43,8 @@ function App() {
 			searchedTodos={ searchedTodos }
 			completeToDo={ completeToDo }
 			deleteToDo={ deleteToDo }
+			loading={ loading }
+			error={ error }
 		/>
 	)
 }

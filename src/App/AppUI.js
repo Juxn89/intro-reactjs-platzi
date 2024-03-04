@@ -7,7 +7,7 @@ import {
 } from '../components';
 
 export const AppUI = (props) => {
-	const {total, totalCompleted, searchValue, setSearchValue, searchedTodos, completeToDo, deleteToDo} = props;
+	const { total, totalCompleted, searchValue, setSearchValue, searchedTodos, completeToDo, deleteToDo, loading, error } = props;
 	
 	return (
     <>
@@ -15,6 +15,11 @@ export const AppUI = (props) => {
       <TodoSearch searchValue={ searchValue } setSearchValue={ setSearchValue } />
 
       <TodoList>
+				{ loading && <p>We're loading...</p> }
+				{ error && <p>Something went wrong</p> }
+				{
+					(!loading && searchedTodos.length === 0) && <p>Create your first ToDo!</p>
+				}
         {
           searchedTodos.map(todo => (
             <TodoItem 
