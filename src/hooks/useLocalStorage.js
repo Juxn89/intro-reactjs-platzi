@@ -24,7 +24,7 @@ export const useLocalStorage = (key, initialValue) => {
 			}
 
 			setLoading(false)					
-		}, 3000)
+		}, 2000)
 	
 	}, [])
 

@@ -1,9 +1,12 @@
 import { 
-  CreateTodoButton ,
+	EmptyTodos,
+	TodosError,
+	TodosLoading,
+  CreateTodoButton,
+  TodoCounter,
   TodoItem,
   TodoList,
   TodoSearch,
-  TodoCounter
 } from '../components';
 
 export const AppUI = (props) => {
@@ -15,10 +18,10 @@ export const AppUI = (props) => {
       <TodoSearch searchValue={ searchValue } setSearchValue={ setSearchValue } />
 
       <TodoList>
-				{ loading && <p>We're loading...</p> }
-				{ error && <p>Something went wrong</p> }
+				{ loading && <TodosLoading /> }
+				{ error && <TodosError /> }
 				{
-					(!loading && searchedTodos.length === 0) && <p>Create your first ToDo!</p>
+					(!loading && searchedTodos.length === 0) && <EmptyTodos />
 				}
         {
           searchedTodos.map(todo => (
