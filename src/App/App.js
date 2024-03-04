@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { AppUI } from './AppUI';
 import { useLocalStorage } from '../hooks/useLocalStorage';
 import './App.css';
