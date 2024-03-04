@@ -1,8 +1,9 @@
-import { useState } from 'react'
+import { useContext } from 'react'
+import { TodoContext } from '../../context/TodoContext'
 import styles from './TodoSearch.module.css'
 
-export function TodoSearch(props) {
-	const {searchValue, setSearchValue} = props
+export function TodoSearch() {
+	const {searchValue, setSearchValue} = useContext(TodoContext)
 
 	const onChangeHandler = (event) => {
 		// console.log('TodoSearch | onChangeHandler', { event, 'target': event.target, 'value': event.target.value })
