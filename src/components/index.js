@@ -1,5 +1,6 @@
 export { CreateTodoButton } from './CreateTodoButton/CreateTodoButton'
 export { EmptyTodos } from './EmptyTodos/EmptyTodos'
+export { Modal } from './Modal/Modal'
 export { TodoCounter } from './TodoCounter/TodoCounter'
 export { TodoItem } from './TodoItem/TodoItem'
 export { TodoList } from './TodoList/TodoList'

@@ -1,5 +1,7 @@
+import { useContext } from 'react';
 import { 
 	EmptyTodos,
+	Modal,
 	TodosError,
 	TodosLoading,
   CreateTodoButton,
@@ -12,6 +14,7 @@ import { TodoContext } from '../context/TodoContext';
 
 export const AppUI = (props) => {
 	// const { loading, error, searchedTodos, completeToDo, deleteToDo } = useContext(TodoContext);
+	const { openModal, setOpenModal } = useContext(TodoContext)
 
 	return (
     <>
@@ -48,6 +51,14 @@ export const AppUI = (props) => {
 			</TodoContext.Consumer>
 
       <CreateTodoButton />
+
+			{
+				openModal && (
+					<Modal>
+						I'm a modal :)
+					</Modal>
+				)
+			}
     </>
   );
 }
