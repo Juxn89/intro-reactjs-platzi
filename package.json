@@ -10,9 +10,9 @@
   },
   "scripts": {
     "build": "react-scripts build",
-		"deploy": "npm run pre-preploy && gh-pages -d build",
+		"deploy": "gh-pages -d build",
     "eject": "react-scripts eject",
-		"pre-deploy": "npm run build",
+		"predeploy": "npm run build",
     "start": "react-scripts start"
   },
   "eslintConfig": {
