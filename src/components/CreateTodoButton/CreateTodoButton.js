@@ -15,7 +15,8 @@ export function CreateTodoButton() {
 				className={ styles.CreateTodoButton }
 				onClick={ handlerClick }
 			>
-				➕
+				{/* ➕ */}
+				+
 			</button>
 		</>
 	)

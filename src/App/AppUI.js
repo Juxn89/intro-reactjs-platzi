@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import { 
 	EmptyTodos,
 	Modal,
+	TodoForm,
 	TodosError,
 	TodosLoading,
   CreateTodoButton,
@@ -55,7 +56,7 @@ export const AppUI = (props) => {
 			{
 				openModal && (
 					<Modal>
-						I'm a modal :)
+						<TodoForm />
 					</Modal>
 				)
 			}

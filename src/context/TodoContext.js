@@ -35,20 +35,27 @@ const TodoProvider = ({ children }) => {
 		saveItem(updatedListToDos)
 	}
 
+	const addTodo = (newTodo) => {		
+		const updatedListTodos = [...todos, { id: crypto.randomUUID(), name: newTodo, completed: false }]
+		saveItem(updatedListTodos)
+	}
+
 	return (
 		<TodoContext.Provider value={{ 
-			todos, 
-			saveItem, 
-			loading, 
-			error, 
-			searchValue, 
-			setSearchValue, 
-			total, totalCompleted, 
-			searchedTodos, 
+			addTodo,
 			completeToDo, 
 			deleteToDo,
+			error, 
+			loading, 
 			openModal,
-			setOpenModal
+			saveItem, 
+			searchedTodos, 
+			searchValue, 
+			setOpenModal,
+			setSearchValue, 
+			todos, 
+			total,
+			totalCompleted, 
 		}}>
 			{ children }
 		</TodoContext.Provider>
