@@ -1,9 +1,21 @@
-import './App.css';
+import { HashRouter, Route, Routes } from 'react-router-dom'
+import { Blog, Home, Menu, NotFound, Profile } from '../components'
 
-function App() {
-
+function App() {	
 	return(
-		<h1>Main Page</h1>
+		<>
+			<HashRouter>
+				<Menu />
+				<Routes>
+					<Route path='/' element={ <Home /> }/>
+					<Route path='/blog' element={ <Blog /> }/>
+					<Route path='/profile' element={ <Profile /> }/>
+					<Route path='*' element={ <NotFound /> }/>
+				</Routes>
+
+				<footer></footer>
+			</HashRouter>
+		</>
 	)
 }
 
