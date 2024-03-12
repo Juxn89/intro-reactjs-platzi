@@ -1,5 +1,6 @@
 export { Blog } from './Blog'
-export { NotFound } from './NotFound'
+export { BlogPost } from './Blog/BlogPost'
 export { Home } from './Home'
 export { Menu } from './Menu'
+export { NotFound } from './NotFound'
 export { Profile } from './Profile'

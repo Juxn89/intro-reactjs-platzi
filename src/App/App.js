@@ -1,5 +1,5 @@
 import { HashRouter, Route, Routes } from 'react-router-dom'
-import { Blog, Home, Menu, NotFound, Profile } from '../components'
+import { Blog, BlogPost, Home, Menu, NotFound, Profile } from '../components'
 
 function App() {	
 	return(
@@ -9,6 +9,7 @@ function App() {
 				<Routes>
 					<Route path='/' element={ <Home /> }/>
 					<Route path='/blog' element={ <Blog /> }/>
+					<Route path='/blog/:slug' element={ <BlogPost /> }/>
 					<Route path='/profile' element={ <Profile /> }/>
 					<Route path='*' element={ <NotFound /> }/>
 				</Routes>
