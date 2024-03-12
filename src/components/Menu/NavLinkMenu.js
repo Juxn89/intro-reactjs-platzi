@@ -6,8 +6,8 @@ export const NavLinkMenu = () => {
 		<ul>
 			{
 				RoutesList.map(route => (
-				<li>
-					<NavLink 
+				<li key={ route.url }>
+					<NavLink
 						to={ route.url }
 						className={ ({ isActive }) => '' }
 						style={ ({ isActive }) => ({ color: isActive ? 'green' : 'blue' }) }

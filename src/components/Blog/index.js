@@ -6,7 +6,7 @@ export const Blog = () => {
 			<h1>Blog</h1>
 			{
 				blogs.map(blog => (
-					<BlogLink post={ blog } />
+					<BlogLink key={ blog.slug } post={ blog } />
 				))
 			}
 		</>
