@@ -1,7 +1,12 @@
+import { LinkMenu } from "./LinkMenu"
+import { NavLinkMenu } from "./NavLinkMenu"
+
+
 export const Menu = () => {
 	return(
-		<>
-			<h1>Menu</h1>
-		</>
+		<nav>
+			<LinkMenu />
+			<NavLinkMenu />
+		</nav>
 	)
 }
