@@ -3,17 +3,17 @@ import { useAuth } from '../../hooks/useAuth'
 import { RoutesList } from '../../data'
 
 export const NavLinkMenu = () => {
-	const auth = useAuth();
+	const auth = useAuth()
 
 	return(
 		<ul>
 			{
 				RoutesList.map(route => {
 					if(route.publiOnly && auth.user)
-						return null;
+						return null
 					
 					if(route.private && !auth.user) 
-						return null;
+						return null
 
 					return (
 						<li key={ route.url }>

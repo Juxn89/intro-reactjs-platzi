@@ -1,12 +1,12 @@
-import { useState } from "react"
+import { useState } from 'react'
 import { useAuth } from '../../hooks/useAuth'
 
 export const Login = () => {
-	const auth = useAuth();
+	const auth = useAuth()
 	const [username, setUsername] = useState('')
 
 	const login = (e) => {
-		e.preventDefault();
+		e.preventDefault()
 		auth.login(username)
 	}
 

@@ -1,5 +1,5 @@
-import { LinkMenu } from "./LinkMenu"
-import { NavLinkMenu } from "./NavLinkMenu"
+import { LinkMenu } from './LinkMenu'
+import { NavLinkMenu } from './NavLinkMenu'
 
 
 export const Menu = () => {

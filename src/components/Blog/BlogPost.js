@@ -1,4 +1,4 @@
-import { useNavigate, useParams } from "react-router-dom"
+import { useNavigate, useParams } from 'react-router-dom'
 import { blogs } from '../../data'
 
 export const BlogPost = () => {

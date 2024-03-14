@@ -4,7 +4,7 @@ export const Logout = () => {
 	const auth = useAuth()
 
 	const logout = (e) => {
-		e.preventDefault();
+		e.preventDefault()
 		auth.logout()
 	}
 
