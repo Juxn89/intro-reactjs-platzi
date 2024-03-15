@@ -12,7 +12,7 @@ const AuthProvider = ({ children }) => {
 		navigate('/profile')
 	}
 	
-	const logout = (userName) => {
+	const logout = () => {
 		navigate('/')
 		setUser(null)
 	}

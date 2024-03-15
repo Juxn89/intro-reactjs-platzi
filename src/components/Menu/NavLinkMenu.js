@@ -19,7 +19,7 @@ export const NavLinkMenu = () => {
 						<li key={ route.url }>
 							<NavLink
 								to={ route.url }
-								className={ ({ isActive }) => '' }
+								className={ ({ isActive }) => isActive ? '' : '' }
 								style={ ({ isActive }) => ({ color: isActive ? 'green' : 'blue' }) }
 							>
 								{ route.title }

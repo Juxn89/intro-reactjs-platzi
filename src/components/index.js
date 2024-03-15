@@ -1,3 +1,4 @@
+export { AuthRoute } from './Auth'
 export { Blog } from './Blog'
 export { BlogPost } from './Blog/BlogPost'
 export { Home } from './Home'

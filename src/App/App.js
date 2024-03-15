@@ -1,5 +1,5 @@
 import { HashRouter, Route, Routes } from 'react-router-dom'
-import { Blog, BlogPost, Home, Menu, NotFound, Profile, Login, Logout } from '../components'
+import { Blog, BlogPost, Home, Menu, NotFound, Profile, Login, Logout, AuthRoute } from '../components'
 import { AuthProvider } from '../context/auth'
 
 function App() {	
@@ -16,8 +16,22 @@ function App() {
 						</Route>
 						
 						<Route path='/login' element={ <Login /> }/>
-						<Route path='/logout' element={ <Logout /> }/>
-						<Route path='/profile' element={ <Profile /> }/>
+						<Route 
+							path='/logout' 
+							element={
+								<AuthRoute>
+									<Logout />
+								</AuthRoute>
+							}
+						/>
+						<Route 
+							path='/profile' 
+							element={
+								<AuthRoute>
+									<Profile />
+								</AuthRoute>
+							}
+						/>
 						<Route path='*' element={ <NotFound /> }/>
 					</Routes>
 
