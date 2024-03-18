@@ -10,8 +10,8 @@ import {
 	TodoItem,
 	TodoList,
 	TodoSearch,
-} from '../components'
-import { TodoContext } from '../context/TodoContext'
+} from '../../components'
+import { TodoContext } from '../../context/TodoContext'
 
 export const AppUI = () => {
 	// const { loading, error, searchedTodos, completeToDo, deleteToDo } = useContext(TodoContext);

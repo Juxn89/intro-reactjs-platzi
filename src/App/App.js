@@ -1,13 +1,15 @@
-import { AppUI } from './AppUI'
-import './App.css'
-import { TodoProvider } from '../context/TodoContext'
+import { HashRouter, Route, Routes } from 'react-router-dom'
+import { EditTodoPage, HomePage, NewTodoPage } from '../routes'
 
 function App() {
-
 	return(
-		<TodoProvider>
-			<AppUI />
-		</TodoProvider>
+		<HashRouter>
+			<Routes>
+				<Route path='/' element={ <HomePage /> } />
+				<Route path='/new' element={ <NewTodoPage /> } />
+				<Route path='/edit/:id' element={ <EditTodoPage /> } />
+			</Routes>
+		</HashRouter>
 	)
 }
 
