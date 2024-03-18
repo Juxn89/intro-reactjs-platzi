@@ -1,6 +1,6 @@
-import { AppUI } from './AppUI';
-import './App.css';
-import { TodoProvider } from '../context/TodoContext';
+import { AppUI } from './AppUI'
+import './App.css'
+import { TodoProvider } from '../context/TodoContext'
 
 function App() {
 
@@ -11,4 +11,4 @@ function App() {
 	)
 }
 
-export default App;
+export default App

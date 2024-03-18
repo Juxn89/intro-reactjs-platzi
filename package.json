@@ -9,10 +9,12 @@
     "web-vitals": "2.1.4"
   },
   "scripts": {
+		"eslint:check": "eslint .",
+		"eslint:fix": "eslint . --fix",
     "build": "react-scripts build",
-		"deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d build",
     "eject": "react-scripts eject",
-		"predeploy": "npm run build",
+    "predeploy": "npm run build",
     "start": "react-scripts start"
   },
   "eslintConfig": {
@@ -34,6 +36,8 @@
   },
   "homepage": ".",
   "devDependencies": {
+    "eslint": "8.57.0",
+    "eslint-plugin-react": "^7.34.1",
     "gh-pages": "6.1.1"
   }
 }

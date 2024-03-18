@@ -4,7 +4,7 @@ import styles from './CreateTodoButton.module.css'
 
 export function CreateTodoButton() {
 	const { openModal, setOpenModal } = useContext(TodoContext)
-	const handlerClick = (event) => {
+	const handlerClick = () => {
 		setOpenModal(!openModal)
 	}
 

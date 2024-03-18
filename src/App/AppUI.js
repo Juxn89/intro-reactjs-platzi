@@ -1,26 +1,26 @@
-import { useContext } from 'react';
+import { useContext } from 'react'
 import { 
 	EmptyTodos,
 	Modal,
 	TodoForm,
 	TodosError,
 	TodosLoading,
-  CreateTodoButton,
-  TodoCounter,
-  TodoItem,
-  TodoList,
-  TodoSearch,
-} from '../components';
-import { TodoContext } from '../context/TodoContext';
+	CreateTodoButton,
+	TodoCounter,
+	TodoItem,
+	TodoList,
+	TodoSearch,
+} from '../components'
+import { TodoContext } from '../context/TodoContext'
 
-export const AppUI = (props) => {
+export const AppUI = () => {
 	// const { loading, error, searchedTodos, completeToDo, deleteToDo } = useContext(TodoContext);
-	const { openModal, setOpenModal } = useContext(TodoContext)
+	const { openModal } = useContext(TodoContext)
 
 	return (
-    <>
-      <TodoCounter />
-      <TodoSearch />
+		<>
+			<TodoCounter />
+			<TodoSearch />
 
 			<TodoContext.Consumer>
 				{ ({loading, error, searchedTodos, completeToDo, deleteToDo}) => (
@@ -51,7 +51,7 @@ export const AppUI = (props) => {
 				)}
 			</TodoContext.Consumer>
 
-      <CreateTodoButton />
+			<CreateTodoButton />
 
 			{
 				openModal && (
@@ -60,6 +60,6 @@ export const AppUI = (props) => {
 					</Modal>
 				)
 			}
-    </>
-  );
+		</>
+	)
 }

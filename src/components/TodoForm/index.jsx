@@ -7,7 +7,7 @@ export const TodoForm = () => {
 	const { setOpenModal, addTodo} = useContext(TodoContext)
 
 	const handlerSubmitForm = (event) => {
-		event.preventDefault();
+		event.preventDefault()
 
 		addTodo(newTodoValue)
 		setOpenModal(false)

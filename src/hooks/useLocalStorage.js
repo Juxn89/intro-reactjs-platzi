@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react'
 
 export const useLocalStorage = (key, initialValue) => {
 	const [item, setItem] = useState(initialValue)
@@ -9,7 +9,7 @@ export const useLocalStorage = (key, initialValue) => {
 		setTimeout(() => {
 			try {
 				const locaStorageItem = localStorage.getItem(key)
-				let parsedTodos = [];
+				let parsedTodos = []
 
 				if(locaStorageItem === null) {
 					localStorage.setItem(key, JSON.stringify(initialValue))

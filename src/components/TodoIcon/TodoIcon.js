@@ -8,7 +8,7 @@ const iconsAllowed = {
 }
 
 export const TodoIcon = (props) => {
-	const { type, color, onClick } = props;
+	const { type, color, onClick } = props
 
 	return(
 		<span 

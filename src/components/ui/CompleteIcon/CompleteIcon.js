@@ -1,4 +1,4 @@
-import { TodoIcon } from "../../TodoIcon/TodoIcon"
+import { TodoIcon } from '../../TodoIcon/TodoIcon'
 
 export const CompleteIcon = (props) => {
 	const { completed, onComplete } = props
