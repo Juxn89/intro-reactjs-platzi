@@ -23,7 +23,7 @@ export const AppUI = () => {
 			<TodoSearch />
 
 			<TodoContext.Consumer>
-				{ ({loading, error, searchedTodos, completeToDo, deleteToDo}) => (
+				{ ({loading, error, searchedTodos, completeToDo, deleteToDo, editToDo}) => (
 					<TodoList>
 						{ loading &&
 							<>					
@@ -42,8 +42,9 @@ export const AppUI = () => {
 									key={todo.id} 
 									name={ todo.name } 
 									completed={ todo.completed } 
-									handleComplete={ () => {completeToDo(todo.id) } } 
+									handleComplete={ () => completeToDo(todo.id) } 
 									handleDetele={ () => deleteToDo(todo.id) }
+									handleEdit={ () => editToDo(todo.id) }
 								/>
 							))
 						}
