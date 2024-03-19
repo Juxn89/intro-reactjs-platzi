@@ -12,7 +12,7 @@ export function TodoItem(props) {
 
 			<p className={ `${styles['TodoItem-p']} ${completed && styles['TodoItem-p--complete']}` }>{name}</p>
 
-			<EditIcon onComplete={ handleEdit } />
+			<EditIcon handleEdit={ handleEdit } />
 
 			<DeleteIcon onDelete={ handleDetele } />
 		</li>

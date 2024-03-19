@@ -1,7 +1,13 @@
+import { TodoForm } from '../../components/'
+
 export const NewTodoPage = () => {
 	return(
 		<>
-			<p>New</p>
+			<TodoForm
+				title={ 'Write your new ToDo' }
+				submiteText={ 'Add' }
+				submitEvent={ () => {  } }
+			/>
 		</>
 	)
 }
