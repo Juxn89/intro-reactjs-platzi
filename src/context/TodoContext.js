@@ -6,7 +6,6 @@ const TodoContext = createContext()
 const TodoProvider = ({ children }) => {
 	const { item: todos, saveItem, loading, error } = useLocalStorage('ToDo_v1', [])
 	const [searchValue, setSearchValue] = useState('')
-	const [openModal, setOpenModal] = useState(false)
 
 	const total = todos.length
 	const totalCompleted = todos.filter(todos => !!todos.completed).length
@@ -35,6 +34,20 @@ const TodoProvider = ({ children }) => {
 		saveItem(updatedListToDos)
 	}
 
+	const editToDo = (id, text) => {
+		const todosListUpdated = todos.map(todo => {
+			if(todo.id !== id) return todo
+
+			todo.name = text
+			console.log(todo)
+			return todo
+		})
+
+		console.log(todosListUpdated)
+
+		saveItem(todosListUpdated)
+	}
+
 	const addTodo = (newTodo) => {		
 		const updatedListTodos = [...todos, { id: crypto.randomUUID(), name: newTodo, completed: false }]
 		saveItem(updatedListTodos)
@@ -46,16 +59,15 @@ const TodoProvider = ({ children }) => {
 			completeToDo, 
 			deleteToDo,
 			error, 
-			loading, 
-			openModal,
+			loading,
 			saveItem, 
 			searchedTodos, 
-			searchValue, 
-			setOpenModal,
+			searchValue,
 			setSearchValue, 
 			todos, 
 			total,
-			totalCompleted, 
+			totalCompleted,
+			editToDo
 		}}>
 			{ children }
 		</TodoContext.Provider>

@@ -3,15 +3,14 @@ import { useNavigate } from 'react-router-dom'
 import './TodoForm.css'
 
 export const TodoForm = (props) => {
-	const { title, submiteText, submitEvent } = props
+	const { title, submiteText, submitEvent, todoName = '' } = props
 	const navigate = useNavigate()
-	const [newTodoValue, setNewTodoValue] = useState()
+	const [newTodoValue, setNewTodoValue] = useState(todoName)
 
 	const handlerSubmitForm = (event) => {
 		event.preventDefault()
-
-		// addTodo(newTodoValue)
-		submitEvent()
+		
+		submitEvent(newTodoValue)
 		navigate('/')
 	}
 
