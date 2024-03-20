@@ -53,12 +53,18 @@ const TodoProvider = ({ children }) => {
 		saveItem(updatedListTodos)
 	}
 
+	const findToDo = (id) => {
+		return todos.find(todo => todo.id === id)
+	}
+
 	return (
 		<TodoContext.Provider value={{ 
 			addTodo,
 			completeToDo, 
 			deleteToDo,
+			editToDo,
 			error, 
+			findToDo,
 			loading,
 			saveItem, 
 			searchedTodos, 
@@ -66,8 +72,7 @@ const TodoProvider = ({ children }) => {
 			setSearchValue, 
 			todos, 
 			total,
-			totalCompleted,
-			editToDo
+			totalCompleted
 		}}>
 			{ children }
 		</TodoContext.Provider>

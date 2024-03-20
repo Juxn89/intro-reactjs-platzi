@@ -41,7 +41,7 @@ export const AppUI = () => {
 							completed={ todo.completed } 
 							handleComplete={ () => completeToDo(todo.id) } 
 							handleDetele={ () => deleteToDo(todo.id) }
-							handleEdit={ () => navigate(`/edit/${todo.id}`) }
+							handleEdit={ () => navigate(`/edit/${todo.id}`, { state: { todo } }) }
 						/>
 					))
 				}
